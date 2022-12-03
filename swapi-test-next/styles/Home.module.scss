@@ -1,3 +1,7 @@
+@import "mixins";
+
+$color-primary: blueviolet;
+
 .container {
   padding: 0 2rem;
 }
@@ -19,17 +23,18 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
-}
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+
 }
 
 .title a {
-  color: #0070f3;
+  color: $color-primary;
   text-decoration: none;
 }
 
@@ -71,6 +76,12 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+
+  @include desktop() {
+      width: 100%;
+      flex-direction: column;
+  }
+  
 }
 
 .card {
@@ -88,8 +99,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: $color-primary;
+  border-color: $color-primary;
 }
 
 .card h2 {
@@ -107,13 +118,20 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+ 
+// @include desktop() {
+//   .grid {
+//     width: 100%;
+//     flex-direction: column;
+//   }
+// }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
+// @media (max-width: 600px) {
+//   .grid {
+//     width: 100%;
+//     flex-direction: column;
+//   }
+// }
 
 @media (prefers-color-scheme: dark) {
   .card,
