@@ -27,3 +27,7 @@ Consume the Star Wars API (SWAPI) using React, NextJS and other JS technologies 
 
 - https://www.swapi.tech/
 - https://nextjs.org/
+
+### Extra comments:
+
+In terms of the test, vanilla SCSS modules leverage feature you like. No specifics on the UI, we purposely leave this open ended. Interested to see what you come up with. Have a great weekend and chat soon.
