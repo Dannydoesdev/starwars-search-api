@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import styles from './page.module.scss'
-import variables from './variables.module.scss'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
