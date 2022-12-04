@@ -35,12 +35,10 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
 }
 
 function Film({ film }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const router = useRouter();
-
   const data = useArraySearch(film.characters)
-  // console.log(data)
 
-  if (!data) {
+  // if (!data) {
+    if (!data || !(film.characters.length === data.length)){
     return (
       <>
         <Link href='/'>

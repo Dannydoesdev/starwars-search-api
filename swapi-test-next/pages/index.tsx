@@ -21,7 +21,7 @@ export async function getStaticProps() {
 }
 
 export function Home({ films }: FilmListProps) {
-  console.log(films)
+  // console.log(films)
   return (
     <div className={styles.div}>
       <Head>
