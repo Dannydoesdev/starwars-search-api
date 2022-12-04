@@ -1,34 +1,13 @@
 import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-
-interface FilmResult {
-  properties: IndividualFilm[];
-  uid: String;
-  message: String;
-}
-
-interface IndividualFilm {
-  characters: Array<String>,
-  created: String,
-  director: String,
-  edited: String,
-  episode_id: Number,
-  opening_crawl: String,
-  planets: Array<String>,
-  producer: String,
-  release_date: String,
-  species: Array<String>,
-  starships: Array<String>,
-  title: String,
-  url: String,
-  vehicles: Array<String>,
-}
+import { IndividualFilm, FilmResult } from '../../interfaces';
+import Link from 'next/link';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch(`https://www.swapi.tech/api/films/`)
   const data = await res.json()
 
-  const paths = data.result.map((film: any) => ({
+  const paths = data.result.map((film: FilmResult) => ({
     params: {
       id: film.uid
     },
@@ -54,14 +33,15 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
 
 function Film({ film }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
-  console.log(film)
 
   return (
     <>
+      <Link href='/'>
+        Home
+      </Link>
       <h1>{film.title}</h1>
     </>
   )
-
 }
 
 export default Film

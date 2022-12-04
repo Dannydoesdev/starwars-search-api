@@ -2,6 +2,11 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import { Key } from 'react'
 import Film from '../components/HomePage/Film'
+import { IndividualFilm } from '../interfaces'
+
+type FilmListProps = {
+  films: IndividualFilm[]
+}
 
 export async function getStaticProps() {
   const res = await fetch(`https://www.swapi.tech/api/films/`)
@@ -15,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-export function Home({ films }: any) {
+export function Home({ films }: FilmListProps) {
   return (
     <div className={styles.div}>
       <Head>
@@ -33,6 +38,7 @@ export function Home({ films }: any) {
             title={film.properties.title}
             releaseYear={film.properties.release_date}
             director={film.properties.director}
+            uid={film.uid}
           />
         )
         })}
