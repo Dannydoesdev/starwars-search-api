@@ -1,7 +1,7 @@
 export interface FilmResult {
-  properties: IndividualFilm[];
-  uid: string;
-  message: string;
+  properties: IndividualFilm[],
+  uid: string,
+  message: string
 }
 export interface IndividualFilm {
   characters: Array<string>,

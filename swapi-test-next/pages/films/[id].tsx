@@ -50,7 +50,7 @@ function Film({ film }: InferGetStaticPropsType<typeof getStaticProps>) {
   // }, [])
   
 
-  const { data } = useArraySearch(film.characters)
+  const data  = useArraySearch(film.characters)
   console.log(data)
 
   if (!data) {
@@ -73,8 +73,11 @@ function Film({ film }: InferGetStaticPropsType<typeof getStaticProps>) {
       <h1>{film.title}</h1>
       <h2>Characters:</h2>
       {/* <p>{data[0][0].name}</p> */}
-      {data.map((char:any) => {
+      {/* {data.map((char:any) => {
        return <p> {char} </p>
+      })} */}
+      {data.map((char: any) => {
+        return <p>{char.name}</p>
       })}
     </>
   )

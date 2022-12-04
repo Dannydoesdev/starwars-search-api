@@ -23,34 +23,47 @@ function useApiArray(endpointArray: string[]) {
   }
   console.log(endpointArray)  
 
-  interface returnObject {
-    [key: string]: any,
-    properties?: object
+  interface ReturnObject {
+    name: string,
+    data: object
   }
+  interface ReturnArray {
+    data?: Array<ReturnObject>
+  }
+  // const returnArr: ReturnObject[] = [];
+  const returnArr: any = [];
 
 
-  let returnObj: returnObject = [
+  // let returnObj: returnObject = [
    
-    // [key: string]: Object[]
-  ]
+  //   // [key: string]: Object[]
+  // ]
   
   endpointArray.map((endpoint) => {
     console.log(endpoint)
     const { data } = useSWR(`${endpoint}`, fetcher)
     if (data) { 
-    console.log(data)
-    let resultName: string = data.result.properties.name;
-    let resultData: object = data.result.properties
+      console.log(data)
+      let resultObj = {
+        name: data.result.properties.name,
+        data: data.result.properties
+      }
+      
+    returnArr.push(resultObj)
+
+    // let resultName: string = data.result.properties.name;
+    // let resultData: object = data.result.properties
       
 
-      returnObj[resultName] = resultData;
-      console.log(returnObj)
+      // returnObj[resultName] = resultData;
+      // console.log(returnObj)
   }
 
   })
 
-  return { data: returnObj };
-
+  // return { data: returnObj };
+  console.log(returnArr)
+  return returnArr;
   // const { data, error } = useSWR(`https://www.swapi.tech/api/${endpoint}/${id}`, fetcher)
 
   // return {
