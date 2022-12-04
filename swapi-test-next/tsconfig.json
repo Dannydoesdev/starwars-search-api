@@ -28,8 +28,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts" 
-, "hooks/useApiSearch.tsx"   ],
+    ".next/types/**/*.ts", 
+    "hooks/useApiSearch.tsx"
+    ],
   "exclude": [
     "node_modules"
   ]
