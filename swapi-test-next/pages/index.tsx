@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.scss'
 import { Key } from 'react'
 import Film from '../components/HomePage/Film'
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`https://www.swapi.tech/api/films/`)
   const data = await res.json()
 
