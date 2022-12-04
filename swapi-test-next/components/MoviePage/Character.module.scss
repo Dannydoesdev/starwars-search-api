@@ -1,0 +1,15 @@
+@import './variables.module.scss';
+
+.div {
+  margin: 10px 30px 10px 30px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  border: 1px solid $primary-color;
+
+  div {
+    display: flex;
+    gap: 30px;
+  }
+}
