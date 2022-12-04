@@ -1,21 +1,21 @@
 export interface FilmResult {
   properties: IndividualFilm[];
-  uid: String;
-  message: String;
+  uid: string;
+  message: string;
 }
 export interface IndividualFilm {
-  characters: Array<String>,
-  created: String,
-  director: String,
-  edited: String,
+  characters: Array<string>,
+  created: string,
+  director: string,
+  edited: string,
   episode_id: Number,
-  opening_crawl: String,
-  planets: Array<String>,
-  producer: String,
-  release_date: String,
-  species: Array<String>,
-  starships: Array<String>,
-  title: String,
-  url: String,
-  vehicles: Array<String>,
+  opening_crawl: string,
+  planets: Array<string>,
+  producer: string,
+  release_date: string,
+  species: Array<string>,
+  starships: Array<string>,
+  title: string,
+  url: string,
+  vehicles: Array<string>,
 }

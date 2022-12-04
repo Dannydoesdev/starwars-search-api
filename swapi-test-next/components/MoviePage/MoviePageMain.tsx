@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-function Film({ title, releaseYear, director, uid }: any) {
+function MoviePageMain({ title, releaseYear, director, uid }: any) {
 
   return (
     <div>
@@ -13,4 +13,4 @@ function Film({ title, releaseYear, director, uid }: any) {
     )
 }
 
-export default Film
+export default MoviePageMain
