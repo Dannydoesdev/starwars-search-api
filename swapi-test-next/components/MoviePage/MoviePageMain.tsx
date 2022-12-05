@@ -9,7 +9,7 @@ import Vehicle from './Vehicle'
 
 function MoviePageMain({
   title, release_date, director, uid, planetDetailsArray, characterDetailsArray, speciesDetailsArray, vehiclesDetailsArray, starshipsDetailsArray
-  }: any) {
+}: any) {
 
   return (
     <div className={styles.body}>
@@ -18,7 +18,7 @@ function MoviePageMain({
       <p>Released {release_date}</p>
       <p>Directed by {director}</p>
 
-      <h2>Characters:</h2> 
+      <h2>Characters:</h2>
       <div>
         {characterDetailsArray.map((singleCharacter: any, index: Key | null | undefined) => {
           return (
