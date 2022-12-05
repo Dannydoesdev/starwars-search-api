@@ -1,4 +1,6 @@
 import useSWR, { Key } from "swr"
+import useSWRImmutable from 'swr/immutable'
+
 
 interface ReturnObject {
   name: string,
@@ -10,10 +12,11 @@ interface ReturnArray {
 
 const fetcher = (url: URL) => fetch(url).then(res => res.json())
 
+
 export function useApiSearch(endpoint: string, id: string) {
 
-  const { data, error } = useSWR(`https://www.swapi.tech/api/${endpoint}/${id}`, fetcher)
-
+  // const { data, error } = useSWR(`https://www.swapi.tech/api/${endpoint}/${id}`, fetcher)
+  const { data, error } = useSWRImmutable(`https://www.swapi.tech/api/${endpoint}/${id}`, fetcher)
   return {
     result: data.result,
     properties: data.result.properties,
@@ -31,7 +34,8 @@ function useApiArray(endpointArray: string[]) {
   const returnArr: any = [];
 
   endpointArray.map((endpoint) => {
-    const { data } = useSWR(`${endpoint}`, fetcher, { dedupingInterval: 2000 })
+    // const { data } = useSWR(`${endpoint}`, fetcher, { dedupingInterval: 2000 })
+    const { data } = useSWRImmutable(`${endpoint}`, fetcher, { dedupingInterval: 2000 })
     if (data) {
       let resultObj = {
         name: data.result.properties.name,

@@ -1,23 +1,17 @@
 import styles from './Character.module.scss'
 import ReactTooltip from 'react-tooltip';
 
-function Character({ name, skinColor, birthYear, eyeColour, hairColour, gender }: any) {
+function Character({ name, skin_color, birth_year, eye_color, hair_color, gender }: any) {
 
   return (
-    <div className={styles.div}>
+    <div>
       <h4 data-tip data-for={name}>{name}</h4>
       <ReactTooltip id={name} place="top" type="dark" effect="float">
-        <p>Born: {birthYear}</p>
-        <p>Eye Colour: {eyeColour}</p>
-        <p>Hair Colour: {hairColour}</p>
+        <p>Born: {birth_year}</p>
+        <p>Eye Colour: {eye_color}</p>
+        <p>Hair Colour: {hair_color}</p>
         <p>Gender: {gender}</p>
       </ReactTooltip>
-      <div>
-        <p>Born: {birthYear}</p>
-        <p>Eye Colour: {eyeColour}</p>
-        <p>Hair Colour: {hairColour}</p>
-        <p>Gender: {gender}</p>
-      </div>
     </div>
   )
 }
