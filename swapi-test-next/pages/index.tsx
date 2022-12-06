@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import { Key, useEffect, useState } from 'react'
-import Film from './Film'
+import Film from '../components/HomePage/Film'
 import { IndividualFilm } from '../interfaces'
 // import useLocalStorage from '../hooks/useLocalStorage.js'
 
