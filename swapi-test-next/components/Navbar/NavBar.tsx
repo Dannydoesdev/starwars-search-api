@@ -1,8 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
-import React, { useState } from "react";
-// import Logo from "./Logo";
-import NavItem from "./Navitem";
+import Link from "next/link"
+import React, { useState } from "react"
+import NavItem from './Navitem'
 import styles from './NavBar.module.scss'
 
 
