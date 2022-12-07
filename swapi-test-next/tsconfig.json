@@ -30,7 +30,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts", 
     "hooks/useApiSearch.tsx"
-    ],
+, "hooks/useLocalStorage.js"    ],
   "exclude": [
     "node_modules"
   ]
