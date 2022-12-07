@@ -1,6 +1,6 @@
 import Link from "next/link"
 import React, { useState } from "react"
-import NavItem from './Navitem'
+import NavItem from './NavItem'
 import styles from './NavBar.module.scss'
 
 
