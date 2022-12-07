@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 function Film({ title, releaseYear, director, uid, url, onFavourite, isCurrentFavourite, onClick }: any) {
 
-  console.log(isCurrentFavourite)
+  // console.log(isCurrentFavourite)
   const [isFavourite, setIsFavourite] = useState<boolean>(false)
 
   useEffect(() => {
@@ -16,8 +16,6 @@ function Film({ title, releaseYear, director, uid, url, onFavourite, isCurrentFa
   }, [isCurrentFavourite])
   
 
-  
-
   function handleClick() {
     if (isFavourite) {
       setIsFavourite(false)
@@ -25,7 +23,7 @@ function Film({ title, releaseYear, director, uid, url, onFavourite, isCurrentFa
       setIsFavourite(true)
     }
   }
-  console.log(isFavourite)
+  // console.log(isFavourite)
 
   return (
     <div>
@@ -34,10 +32,11 @@ function Film({ title, releaseYear, director, uid, url, onFavourite, isCurrentFa
           {title}
         </Link>
       </h2>
-        {isFavourite ? <p>Favourited</p> : <p>Not favourite</p>}
+        {/* {isFavourite ? <p>Favourited</p> : <p>Not favourite</p>} */}
       <p>Released {releaseYear}</p>
       <p>Directed by {director}</p>
       <button onClick={() => onFavourite(uid, url) && handleClick()}>Favourite</button>
+      {/* <button onClick={() => { onClick(url) }}>Favourite</button> */}
       {/* <button onClick={() => onFavourite}>Favourite</button> */}
         {/* <button onClick={() => onClick()}>Favourite</button> */}
     </div>
