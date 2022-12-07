@@ -50,9 +50,8 @@ function Film({ film }: InferGetStaticPropsType<typeof getStaticProps>) {
   const allStarshipsReceived = (starshipsDetailsArray && starshipsDetailsArray.length === film.starships.length)
 
 
-  if (!(allCharactersReceived) || !(allPlanetsReceived) || !(allSpeciesReceived || !(allStarshipsReceived) || !(allVehiclesReceived))){
+  if (!(allCharactersReceived) || !(allPlanetsReceived) || !(allSpeciesReceived || !(allStarshipsReceived) || !(allVehiclesReceived))) {
 
-    // if (!characterDetailsArray || !(film.characters.length === characterDetailsArray.length)){
     return (
       <>
         <Link href='/'>

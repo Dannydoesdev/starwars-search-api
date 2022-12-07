@@ -18,19 +18,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "plugins": [{
+      "name": "next"
+    }]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts", 
-    "hooks/useApiSearch.tsx"
-, "hooks/useLocalStorage.js"    ],
+    ".next/types/**/*.ts",
+    "hooks/useApiSearch.tsx",
+  ],
   "exclude": [
     "node_modules"
   ]
