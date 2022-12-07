@@ -75,10 +75,7 @@ export function Home({ films }: FilmListProps) {
     setUrl('')
 
   }, [id, url])
-
-  // let searchResult = useApiSearch('films', 'title', 'strikes')
-  // console.log(searchResult)
-
+  
   return (
     <div className={styles.div}>
       <Head>
@@ -89,19 +86,42 @@ export function Home({ films }: FilmListProps) {
       </Head>
       <h1>Welcome to the Star Wars search engine</h1>
 
+      {currentFavourites && <h2>Favourites</h2>}
       {films.map((film: any, index: Key | null | undefined) => {
         return (
+
           <div key={index}>
-            {currentFavourites.includes(film.properties.url) ? <p color='red'>Local Fave</p> : <p>Not local fave</p>}
-            <Film
-              // isCurrentFavourite={currentFavourites.includes(film.properties.url) ? true : false}
-              title={film.properties.title}
-              releaseYear={film.properties.release_date}
-              director={film.properties.director}
-              uid={film.uid}
-              url={film.properties.url}
-              onFavourite={handleFavouriteNew}
-            />
+            {currentFavourites.includes(film.properties.url) &&
+              // currentFavourites.includes(film.properties.url) ? <p color='red'>Local Fave</p> : <p>Not local fave</p>}
+              <Film
+                title={film.properties.title}
+                releaseYear={film.properties.release_date}
+                director={film.properties.director}
+                uid={film.uid}
+                url={film.properties.url}
+                onFavourite={handleFavouriteNew}
+              />
+
+            }
+          </div>
+        )
+      })}
+      <h2>List</h2>
+      {films.map((film: any, index: Key | null | undefined) => {
+        return (
+
+          <div key={index}>
+            {!currentFavourites.includes(film.properties.url) &&
+              <Film
+                title={film.properties.title}
+                releaseYear={film.properties.release_date}
+                director={film.properties.director}
+                uid={film.uid}
+                url={film.properties.url}
+                onFavourite={handleFavouriteNew}
+              />
+
+            }
           </div>
         )
       })}
