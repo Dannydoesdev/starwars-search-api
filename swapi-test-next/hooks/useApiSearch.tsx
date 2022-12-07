@@ -13,17 +13,66 @@ interface ReturnArray {
 const fetcher = (url: URL) => fetch(url).then(res => res.json())
 
 
-export function useApiSearch(endpoint: string, id: string) {
+export function useApiSearch(endpoint: string, param: string, term: string) {
 
+  // if (!endpoint || !param || !term)
+    
+  // if (!(endpoint) || !(param) || !(term)) {
+  //   console.log('no URL received in hook')
+  //   return
+  // }
+  console.log(`https://www.swapi.tech/api/${endpoint}/?${param}=${term}`)
   // const { data, error } = useSWR(`https://www.swapi.tech/api/${endpoint}/${id}`, fetcher)
-  const { data, error } = useSWRImmutable(`https://www.swapi.tech/api/${endpoint}/${id}`, fetcher)
-  return {
-    result: data.result,
-    properties: data.result.properties,
-    isLoading: !error && !data,
-    isError: error
+  // const { data, error } = useSWR(`https://www.swapi.tech/api/${endpoint}/?${param}=${term}`, fetcher)
+
+  // if (endpoint && param && term) {
+
+    const returnArr: any = [];
+    const { data, error } = useSWRImmutable(`https://www.swapi.tech/api/${endpoint}/?${param}=${term}`, fetcher)
+
+  if (data && data.result) {
+    console.log(data)
+
+      data.result.map((singleResult: any) => {
+        let resultObj = {
+          name: singleResult.properties.title ? singleResult.properties.title : singleResult.properties.name,
+          url: singleResult.properties.url ? singleResult.properties.url: singleResult.properties.url,
+          // data: singleResult.properties,
+          film: true
+        }
+        returnArr.push(resultObj)
+
+      })
+      console.log(returnArr)
+      return returnArr;
+    }  else if (data && data.results) {
+      console.log(data)
+  
+        data.results.map((singleResult: any) => {
+          let resultObj = {
+            name: singleResult.name,
+            url: singleResult.url,
+            film: false
+            // data: singleResult.properties
+          }
+          returnArr.push(resultObj)
+  
+        })
+        console.log(returnArr)
+        return returnArr;
+      }
+
+  // }
+   
   }
-}
+  
+  // return {
+  //   result: data.result,
+  //   properties: data.result.properties,
+  //   isLoading: !error && !data,
+  //   isError: error
+  // }
+
 
 function useApiArray(endpointArray: string[]) {
 
