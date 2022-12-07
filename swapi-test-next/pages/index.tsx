@@ -5,7 +5,6 @@ import Film from '../components/HomePage/Film'
 import { IndividualFilm } from '../interfaces'
 import { useApiSearch } from '../hooks/useApiSearch'
 
-
 type FilmListProps = {
   films: IndividualFilm[]
 }
@@ -25,8 +24,8 @@ export async function getStaticProps() {
 export function Home({ films }: FilmListProps) {
 
   const [currentFavourites, setCurrentFavourites] = useState<any>([])
-  const [id, setId] = useState('')
-  const [url, setUrl] = useState('')
+  const [selectedFavouriteId, setSelectedFavouriteId] = useState('')
+  const [selectedFavouriteUrl, setSelectedFavouriteUrl] = useState('')
 
   useEffect(() => {
     const filmArray: any = []
@@ -43,39 +42,38 @@ export function Home({ films }: FilmListProps) {
 
   }, [])
 
-  const handleFavouriteNew = (key: string, value: string) => {
-    setId(key)
-    setUrl(value)
+  const handleFavouriteClick = (key: string, value: string) => {
+    setSelectedFavouriteId(key)
+    setSelectedFavouriteUrl(value)
   }
 
   useEffect(() => {
 
-    if (url == '') return
+    if (selectedFavouriteUrl == '') return
 
     setCurrentFavourites(
       currentFavourites.filter((favourite: any) => favourite !== '')
     )
-    if (currentFavourites.includes(url)) {
+    if (currentFavourites.includes(selectedFavouriteUrl)) {
       console.log('Item already stored... removing')
-      localStorage.removeItem(id)
+      localStorage.removeItem(selectedFavouriteId)
 
       setCurrentFavourites(
-        currentFavourites.filter((favourite: any) => favourite !== url && favourite !== '')
+        currentFavourites.filter((favourite: any) => favourite !== selectedFavouriteUrl && favourite !== '')
       )
 
-    } else if (!currentFavourites.includes(url)) {
+    } else if (!currentFavourites.includes(selectedFavouriteUrl)) {
 
-      localStorage.setItem(id, url)
+      localStorage.setItem(selectedFavouriteId, selectedFavouriteUrl)
       setCurrentFavourites(
-        [url, ...currentFavourites]
+        [selectedFavouriteUrl, ...currentFavourites]
       )
     }
+    setSelectedFavouriteId('')
+    setSelectedFavouriteUrl('')
 
-    setId('')
-    setUrl('')
+  }, [selectedFavouriteId, selectedFavouriteUrl])
 
-  }, [id, url])
-  
   return (
     <div className={styles.div}>
       <Head>
@@ -84,32 +82,32 @@ export function Home({ films }: FilmListProps) {
         <meta name="description" content="Star Wars Search" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* <NavBar /> */}
       <h1>Welcome to the Star Wars search engine</h1>
 
-      {currentFavourites && <h2>Favourites</h2>}
+      {currentFavourites.length >= 1 && <h2>Favourites</h2>}
       {films.map((film: any, index: Key | null | undefined) => {
         return (
 
           <div key={index}>
             {currentFavourites.includes(film.properties.url) &&
-              // currentFavourites.includes(film.properties.url) ? <p color='red'>Local Fave</p> : <p>Not local fave</p>}
               <Film
                 title={film.properties.title}
                 releaseYear={film.properties.release_date}
                 director={film.properties.director}
                 uid={film.uid}
-                url={film.properties.url}
-                onFavourite={handleFavouriteNew}
+                selectedFavouriteUrl={film.properties.url}
+                onFavourite={handleFavouriteClick}
+                alreadyFavourited={true}
               />
 
             }
           </div>
         )
       })}
-      <h2>List</h2>
+      <h2>Movie List</h2>
       {films.map((film: any, index: Key | null | undefined) => {
         return (
-
           <div key={index}>
             {!currentFavourites.includes(film.properties.url) &&
               <Film
@@ -118,7 +116,8 @@ export function Home({ films }: FilmListProps) {
                 director={film.properties.director}
                 uid={film.uid}
                 url={film.properties.url}
-                onFavourite={handleFavouriteNew}
+                onFavourite={handleFavouriteClick}
+                alreadyFavourited={false}
               />
 
             }
