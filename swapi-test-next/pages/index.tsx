@@ -48,14 +48,15 @@ export function Home({ films }: FilmListProps) {
   }
 
   useEffect(() => {
-
+    console.log(selectedFavouriteId)
     if (selectedFavouriteUrl == '') return
 
-    setCurrentFavourites(
-      currentFavourites.filter((favourite: any) => favourite !== '')
-    )
+    // setCurrentFavourites(
+    //   currentFavourites.filter((favourite: any) => favourite !== '')
+    // )
     if (currentFavourites.includes(selectedFavouriteUrl)) {
       console.log('Item already stored... removing')
+      console.log(selectedFavouriteId)
       localStorage.removeItem(selectedFavouriteId)
 
       setCurrentFavourites(
@@ -96,7 +97,7 @@ export function Home({ films }: FilmListProps) {
                 releaseYear={film.properties.release_date}
                 director={film.properties.director}
                 uid={film.uid}
-                selectedFavouriteUrl={film.properties.url}
+                url={film.properties.url}
                 onFavourite={handleFavouriteClick}
                 alreadyFavourited={true}
               />

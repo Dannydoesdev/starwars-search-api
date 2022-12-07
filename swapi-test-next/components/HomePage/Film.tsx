@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react'
 
 function Film({ title, releaseYear, director, uid, url, onFavourite, isCurrentFavourite, alreadyFavourited }: any) {
 
+  console.log(url)
+  console.log(uid)
+
   const [isFavourite, setIsFavourite] = useState<boolean>(false)
 
   useEffect(() => {
