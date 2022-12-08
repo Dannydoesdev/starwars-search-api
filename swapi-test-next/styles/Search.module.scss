@@ -1,0 +1,8 @@
+@import "mixins";
+@import './variables.module.scss';
+
+.body {
+  margin-top: 100px;
+  height: calc(100vh - 200px);
+  width: 100%;
+}

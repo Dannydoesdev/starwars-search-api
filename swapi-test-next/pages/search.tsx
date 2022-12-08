@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Key, useEffect, useState } from "react";
 import Film from "../components/HomePage/Film";
 import { useApiSearch } from "../hooks/useApiSearch"
+import styles from '../styles/Search.module.scss'
 
 function Search() {
   const [inputValue, setInputValue] = useState('')
@@ -31,7 +32,7 @@ function Search() {
 
 
   return (
-    <div>
+    <div className={styles.body}>
       <input
         id='mainSearchInput'
         name='mainSearchInput'
