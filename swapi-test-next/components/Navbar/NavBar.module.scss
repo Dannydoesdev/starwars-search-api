@@ -1,12 +1,11 @@
 
 .header {
-
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   width: 100%;
-
+  // margin-bottom: 100px;
 
   // position: sticky;
   // top: 0;
@@ -24,6 +23,7 @@
     row-gap: 6px;
     cursor: pointer;
     height: 100px;
+
     a {
       text-decoration: none;
       color: inherit;
