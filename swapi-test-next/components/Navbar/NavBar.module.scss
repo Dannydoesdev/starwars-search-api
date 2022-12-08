@@ -1,9 +1,17 @@
 
-
 .header {
-  position: sticky;
-  top: 0;
-  width: 100vw;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+
+
+  // position: sticky;
+  // top: 0;
+  // overflow: hidden;
+  // width: 99.4%;
 
   nav {
     display: flex;
@@ -15,7 +23,7 @@
     flex-direction: row;
     row-gap: 6px;
     cursor: pointer;
-
+    height: 100px;
     a {
       text-decoration: none;
       color: inherit;
@@ -31,7 +39,7 @@
     .navMenuList {
       display: flex;
       flex-direction: row;
-      padding: 24px 16px;
+      padding: 4px 16px;
       transition: all 0.2s;
       background-color: #000000;
     }

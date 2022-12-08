@@ -1,13 +1,14 @@
 import Image from "next/image"
 import { useEffect, useState } from "react";
-import styles from '../styles/Crawl.module.scss'
-import Link from "next/link";
+import styles from './styles/Crawl.module.scss'
 
 // Inspiration and parts of code taken from: https://cssanimation.rocks/starwars/ & 'reactified' by me
 
 function Crawl() {
 
   const [show, setShow] = useState(false)
+
+  // const movieNameStr: string = 'The Force Awakens'
 
   const movieNameStr: string = 'The_Search_Engine'
 
@@ -18,31 +19,28 @@ function Crawl() {
   }, []);
 
   const movieNameArr = movieNameStr.split('')
+  const movieNameArrNoSpace = movieNameArr.filter((letter) => String(letter).trim())
+  console.log(movieNameArrNoSpace)
 
+  console.log(movieNameArr)
   return (
-    <div className={styles.body}>
-      {!show && <div className={styles.introCrawlMain}>
-        <img className={styles.star} alt='Star' src='/img/star.svg' />
-        <img className={styles.wars} alt='Wars' src='/img/wars.svg/' />
+    <div>
+      {!show && <div className='starwars-demo'>
+        <img className='star' alt='Star' src='/img/star.svg' />
+        <img className='wars' alt='Wars' src='/img/wars.svg/' />
 
-        <h2 className={styles.byline}>
+        <h2 className="byline" id="byline">
           {movieNameArr.map((letter: string, index) => {
             return (
               letter == '_' ? <span key={index}>&nbsp;</span> : <span key={index}>{letter}</span>
             )
           })}
         </h2>
+      
       </div>
       }
-
-      {show &&
-        <div className={styles.postCrawlMain}>
-          <Link href='/home'>
-            <button className={styles.enterButton}>Enter</button>
-          </Link>
-        </div>
-      }
-    </div>
+      {show && <button className='enter-button'>Enter</button>} 
+      </div>
   )
 }
 
