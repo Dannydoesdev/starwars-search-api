@@ -1,4 +1,3 @@
-import styles from './Character.module.scss'
 import ReactTooltip from 'react-tooltip';
 
 function Character({ name, skin_color, birth_year, eye_color, hair_color, gender }: any) {

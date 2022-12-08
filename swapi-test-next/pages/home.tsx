@@ -80,13 +80,13 @@ export function Home({ films }: FilmListProps) {
     
       {/* <NavBar /> */}
       <h1>Welcome to the Star Wars search engine</h1>
-
-      {currentFavourites.length >= 1 && <h2>Favourites</h2>}
+      <div className={styles.movieGrid}>
+      {currentFavourites.length >= 1 && <h2 className={styles.heading}>Favourites</h2>}
       {films.map((film: any, index: Key | null | undefined) => {
         return (
-
+          currentFavourites.includes(film.properties.url) &&
           <div key={index}>
-            {currentFavourites.includes(film.properties.url) &&
+            {/* {currentFavourites.includes(film.properties.url) && */}
               <Film
                 title={film.properties.title}
                 releaseYear={film.properties.release_date}
@@ -96,16 +96,17 @@ export function Home({ films }: FilmListProps) {
                 onFavourite={handleFavouriteClick}
                 alreadyFavourited={true}
               />
-
-            }
-          </div>
+            </div>
+          
         )
       })}
-      <h2>Movie List</h2>
+      <h2 className={styles.heading}>Movie List</h2>
+
       {films.map((film: any, index: Key | null | undefined) => {
         return (
+          !currentFavourites.includes(film.properties.url) &&
           <div key={index}>
-            {!currentFavourites.includes(film.properties.url) &&
+            
               <Film
                 title={film.properties.title}
                 releaseYear={film.properties.release_date}
@@ -116,10 +117,11 @@ export function Home({ films }: FilmListProps) {
                 alreadyFavourited={false}
               />
 
-            }
+            
           </div>
         )
       })}
+        </div>
     </div>
   )
 }

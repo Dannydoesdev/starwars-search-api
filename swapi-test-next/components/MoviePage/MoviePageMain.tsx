@@ -15,8 +15,8 @@ function MoviePageMain({
     <div className={styles.body}>
 
       <h1>{title}</h1>
-      <p>Released {release_date}</p>
-      <p>Directed by {director}</p>
+      <h5>Released {release_date}</h5>
+      <h5>Directed by {director}</h5>
 
       <h2>Characters:</h2>
       <div>
