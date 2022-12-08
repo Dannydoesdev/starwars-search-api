@@ -2,7 +2,22 @@
 @import './variables.module.scss';
 
 .body {
-  margin-top: 100px;
+  margin-top: 150px;
   height: calc(100vh - 200px);
   width: 100%;
+  // margin: auto;
+  text-align: center;
+
+  p {
+    font-size: 18px;
+    color: $primary-color;
+  }
+}
+
+.searchBox {
+  width: 50vw;
+  height: 5vh;
+  font: inherit;
+  font-size: 14px;
+  text-align: center;
 }
