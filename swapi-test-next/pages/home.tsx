@@ -77,12 +77,7 @@ export function Home({ films }: FilmListProps) {
 
   return (
     <div className={styles.div}>
-      <Head>
-        <title>Star Wars Search</title>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta name="description" content="Star Wars Search" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    
       {/* <NavBar /> */}
       <h1>Welcome to the Star Wars search engine</h1>
 

@@ -2,6 +2,12 @@ import Link from "next/link"
 import React, { useState } from "react"
 import NavItem from './NavItem'
 import styles from './NavBar.module.scss'
+import localFont from '@next/font/local'
+
+// const jediFont = localFont({ src: '../fonts/starjedi2.woff' })
+// const jediFont = localFont({ src: '../fonts/starjedise.ttf' })
+// const jediFont = localFont({ src: '../fonts/deathstar.ttf' })
+const jediFont = localFont({ src: '../../fonts/galaxy.ttf' })
 
 
 const NAV_ITEMS = [
@@ -14,7 +20,7 @@ function NavBar() {
   const [activeItem, setActiveItem] = useState(-1);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${jediFont.className}`} >
       <nav className={styles.nav}>
         <Link href={"/"}>
           <h1 className="logo">SWAPI</h1>

@@ -2,6 +2,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import styles from '../styles/Crawl.module.scss'
 import Link from "next/link";
+import Head from "next/head"
 
 // Inspiration and parts of code taken from: https://cssanimation.rocks/starwars/ & 'reactified' by me
 
@@ -21,6 +22,12 @@ function Crawl() {
 
   return (
     <div className={styles.body}>
+      <Head>
+        <title>Star Wars Search</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description" content="Star Wars Search" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {!show && <div className={styles.introCrawlMain}>
         <img className={styles.star} alt='Star' src='/img/star.svg' />
         <img className={styles.wars} alt='Wars' src='/img/wars.svg/' />
