@@ -4,15 +4,14 @@ import NavItem from './NavItem'
 import styles from './NavBar.module.scss'
 import localFont from '@next/font/local'
 
-// const jediFont = localFont({ src: '../fonts/starjedi2.woff' })
-// const jediFont = localFont({ src: '../fonts/starjedise.ttf' })
-// const jediFont = localFont({ src: '../fonts/deathstar.ttf' })
+
 const jediFont = localFont({ src: '../../fonts/galaxy.ttf' })
 
 
 const NAV_ITEMS = [
-  { text: "Home", href: "/home" },
-  { text: "Search", href: "/search" },
+  { text: "Intro", href: "/" },
+  { text: "home", href: "/home" },
+  { text: "search", href: "/search" },
 ];
 
 function NavBar() {
@@ -22,7 +21,7 @@ function NavBar() {
   return (
     <header className={`${styles.header} ${jediFont.className}`} >
       <nav className={styles.nav}>
-        <Link href={"/"}>
+        <Link href={"/home"}>
           <h1 className="logo">SWAPI</h1>
         </Link>
         <div
