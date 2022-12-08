@@ -34,21 +34,25 @@ function Search() {
   return (
     <div className={styles.body}>
       <input
+        className={styles.searchBox}
         id='mainSearchInput'
         name='mainSearchInput'
         type='text'
+        placeholder="Type here to search the database"
         value={inputValue}
         onChange={handleInputChange}
       />
       <br />
       <br />
-      <label htmlFor="type"> Search from:</label>
+      <label htmlFor="type"> Search from:  </label>
 
       <select onChange={handleSelectChange} name="type" id="type">
         <option value="films">Films</option>
         <option value="people">Characters</option>
+        <option value="starships">Starships</option>
         <option value="vehicles">Vehicles</option>
-
+        <option value="planets">Planets</option>
+        <option value="species">Species</option>
       </select>
 
       {searchResultInput ?
@@ -56,7 +60,7 @@ function Search() {
           return (
             <div key={index}>
               <Link href={result.url}>
-                <h2>{result.name}</h2>
+                <p>{result.name}</p>
               </Link>
             </div>
           )

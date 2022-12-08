@@ -1,13 +1,27 @@
 @import './variables.module.scss';
 
 .body {
-  margin-top: 100px;
-  margin: 10px 30px 10px 30px;
+  // margin-top: 100px;
+  margin: 100px 30px 10px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-transform: lowercase;
+
+  p {
+    font-size: 10px;
+  }
+
+  h1, h2 {
+    text-decoration: underline;
+  }
+
+  h1 {
+    color: $primary-color;
+  }
 
   h2 {
+    margin-top: 20px;
     color: $primary-color
   }
 
@@ -16,8 +30,14 @@
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
+  }
 
+  div:nth-child(odd) {
+    color: $primary-color;
+  }
 
+  div:nth-child(even) {
+    color: white;
   }
 }
 
