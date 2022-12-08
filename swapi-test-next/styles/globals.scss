@@ -2,7 +2,11 @@ html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+    background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+    // body {
+    //   background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+    // }
+  }
 
 
 * {
@@ -13,8 +17,8 @@ body {
   html {
     color-scheme: dark;
   }
-  body {
-    color: white;
-    background: black;
-  }
+  // body {
+  //   color: white;
+  //   background: black;
+  // }
 }

@@ -1,9 +1,8 @@
 import Image from "next/image"
 import { useEffect, useState } from "react";
-// import 
-// import './crawl.css'
+import styles from './styles/Crawl.module.scss'
 
-// INSPIRATION & CHUNKS OF CODE TAKEN FROM: https://cssanimation.rocks/starwars/
+// Inspiration and parts of code taken from: https://cssanimation.rocks/starwars/ & 'reactified' by me
 
 function Crawl() {
 

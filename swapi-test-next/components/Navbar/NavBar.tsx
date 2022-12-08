@@ -5,7 +5,7 @@ import styles from './NavBar.module.scss'
 
 
 const NAV_ITEMS = [
-  { text: "Home", href: "/" },
+  { text: "Home", href: "/home" },
   { text: "Search", href: "/search" },
 ];
 
