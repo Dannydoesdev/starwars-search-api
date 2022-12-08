@@ -1,4 +1,5 @@
 import '../styles/globals.scss'
+import '../components/Crawl/crawl.css'
 import type { AppProps } from 'next/app'
 import NavBar from '../components/Navbar/NavBar'
 
