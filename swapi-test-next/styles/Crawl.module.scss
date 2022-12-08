@@ -210,6 +210,31 @@
   .introCrawlMain {
     font-size: 10px;
   }
+
+  .enterButton{
+    position: absolute;
+    color: #ffe81f;
+    background-color: transparent;
+    border: none;
+    font-family: "ITC Serif Gothic",Lato;
+    font-size: 1.4em;
+    left: -2em;
+    letter-spacing: .4em;
+    right: -2em;
+    text-align: center;
+    text-transform: uppercase;
+    top: 35%;
+    margin-left: 33vw;
+    width: 50vw;
+    height: 9vh;
+    border-radius: 24px;
+    transition: all;
+    animation-duration: 8s;
+    animation-name: pulse-yellow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    box-shadow: 16px 16px 10px #ffffff1a;
+  }
 }
 
 @media only screen and (max-width: 480px) {
