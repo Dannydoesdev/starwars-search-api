@@ -1,10 +1,9 @@
-import styles from './Character.module.scss'
 import ReactTooltip from 'react-tooltip';
 
 function Starship({ name, model, crew, cost_in_credits, starship_class }: any) {
 
   return (
-    <div className={styles.div}>
+    <div>
       <h4 data-tip data-for={name}>{name}</h4>
       <ReactTooltip id={name} place="top" type="dark" effect="float">
         <p>Model: {model}</p>

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Key, useEffect, useState } from "react";
-import Film from "../components/HomePage/Film";
+import { Key, useState } from "react";
 import { useApiSearch } from "../hooks/useApiSearch"
 import styles from '../styles/Search.module.scss'
 
@@ -46,7 +45,6 @@ function Search() {
       <br />
 
       <label htmlFor="type"> Search from:  </label>
-      {/* <div className='selectDropDown'> */}
         <select className='typeSelect' onChange={handleSelectChange} name="type" id="type">
           <option value="films">Films</option>
           <option value="people">Characters</option>
@@ -55,7 +53,6 @@ function Search() {
           <option value="planets">Planets</option>
           <option value="species">Species</option>
         </select>
-      {/* </div> */}
       {searchResultInput ?
         searchResultInput.map((result: any, index: Key | null | undefined) => {
           return (
@@ -74,6 +71,5 @@ function Search() {
   )
 
 }
-
 
 export default Search

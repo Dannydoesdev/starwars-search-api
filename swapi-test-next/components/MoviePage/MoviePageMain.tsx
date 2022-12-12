@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styles from '../../styles/MoviePageMain.module.scss'
 import { Key } from 'react'
 import Character from './Character'

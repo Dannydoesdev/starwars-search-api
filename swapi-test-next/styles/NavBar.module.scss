@@ -7,12 +7,6 @@
   left: 0px;
   right: 0px;
   width: 100%;
-  // margin-bottom: 100px;
-
-  // position: sticky;
-  // top: 0;
-  // overflow: hidden;
-  // width: 99.4%;
 
   nav {
     display: flex;
@@ -129,7 +123,6 @@
 @include mobile {
 
   .header {
-
     nav {
 
       h1 {

@@ -1,10 +1,9 @@
-import styles from './Character.module.scss'
 import ReactTooltip from 'react-tooltip';
 
 function Species({ name, classification, language, average_height, average_lifespan }: any) {
 
   return (
-    <div className={styles.div}>
+    <div>
       <h4 data-tip data-for={name}>{name}</h4>
       <ReactTooltip id={name} place="top" type="dark" effect="float">
         <p>Classification: {classification}</p>
