@@ -27,42 +27,23 @@
   text-align: center;
 }
 
+
 @include mobile {
 
   .body {
-    // select * {
-    //   font-size: 12px;
-    //   background-color: white;
-    //   color: $primary-color;
-    // }
-    select {
-      position: relative;
-      font: inherit;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-align: center;
+    select * {
+      font-size: 12px;
       background-color: white;
-      color: black;
-      margin-bottom: 20px;
-
-      option {
-
-        font: inherit;
-        background-color: white;
-        color: $primary-color;
-      }
+      color: $primary-color;
     }
 
-  //   select:after * {
-  //     position: relative;
-  //     font: inherit;
-  //     font-size: 12px;
-  //     letter-spacing: 0.1em;
-  //     text-align: center;
-  //     background-color: white;
-  //     color: $primary-color;
-  // }
-}
+    select::after {
+      position: absolute;
+      font-size: 12px;
+      background-color: white;
+      color: $primary-color;
+    }
+  }
 
   .searchBox {
     width: 70vw;
@@ -71,6 +52,5 @@
     font-size: 12px;
     text-align: center;
   }
-  
 
 }

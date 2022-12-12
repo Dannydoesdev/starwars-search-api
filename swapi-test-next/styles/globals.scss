@@ -10,6 +10,7 @@ html, body {
     // }
     color: white;
     letter-spacing: 0.08em;
+    text-transform: lowercase;
   }
 
 a {
@@ -37,6 +38,11 @@ button {
 }
 
 @include mobile {
+
+  body {
+    text-transform: lowercase;
+  }
+
   button {
 
     color: $primary-color;
