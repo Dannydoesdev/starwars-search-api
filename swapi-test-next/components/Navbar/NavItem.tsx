@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from './NavBar.module.scss'
+import styles from '../../styles/NavBar.module.scss'
 
 interface NavItems {
   text: string,

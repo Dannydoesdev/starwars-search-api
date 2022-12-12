@@ -36,6 +36,47 @@ button {
   box-sizing: border-box;
 }
 
+@include mobile {
+  button {
+
+    color: $primary-color;
+    background-color: transparent;
+    border: 1px solid inherit;
+    border-radius: 15px;
+    font: inherit;
+    font-size: 8px;
+    text-align: center;
+    // text-transform: uppercase;
+    width: 18vw;
+    height: 6vh;
+    margin-top: 10px;
+
+
+  // color: #ffe81f;
+  // background-color: transparent;
+  // border: none;
+  // font: inherit;
+  // font-family: "ITC Serif Gothic",Lato;
+  // font-size: 1.4em;
+  // left: -2em;
+  // letter-spacing: .4em;
+  // right: -2em;
+  // text-align: center;
+  // text-transform: uppercase;
+  // top: 35%;
+  // margin-left: 33vw;
+  // width: 50vw;
+  // height: 9vh;
+  // border-radius: 24px;
+  // transition: all;
+  // animation-duration: 8s;
+  // animation-name: pulse-yellow;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate;
+  // box-shadow: 16px 16px 10px #ffffff1a;
+}
+}
+
 @media (prefers-color-scheme: dark) {
   // html {
   //   color-scheme: dark;

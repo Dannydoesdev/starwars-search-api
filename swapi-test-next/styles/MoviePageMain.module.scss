@@ -1,4 +1,5 @@
 @import './variables.module.scss';
+@import 'mixins';
 
 .body {
   // margin-top: 100px;
@@ -38,6 +39,19 @@
 
   div:nth-child(even) {
     color: white;
+  }
+}
+
+
+@include mobile {
+
+  .body {
+
+    text-align: center;
+    
+    h1 {
+      text-align: center;
+    }
   }
 }
 

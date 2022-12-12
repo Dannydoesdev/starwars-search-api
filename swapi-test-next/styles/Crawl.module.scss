@@ -39,7 +39,7 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
   box-shadow: 16px 16px 10px #ffffff1a;
-
+  cursor: pointer;
 }
 
 @keyframes pulse-yellow {
@@ -212,6 +212,7 @@
   }
 
   .enterButton{
+
     position: absolute;
     color: #ffe81f;
     background-color: transparent;
@@ -234,6 +235,7 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     box-shadow: 16px 16px 10px #ffffff1a;
+    cursor: pointer;
   }
 }
 

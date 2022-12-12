@@ -1,7 +1,8 @@
 import Link from "next/link"
 import React, { useState } from "react"
 import NavItem from './NavItem'
-import styles from './NavBar.module.scss'
+
+import styles from '../../styles/NavBar.module.scss'
 import localFont from '@next/font/local'
 
 
