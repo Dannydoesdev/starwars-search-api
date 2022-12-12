@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { useEffect, useState } from "react";
 import styles from '../styles/Crawl.module.scss'
 import Link from "next/link";

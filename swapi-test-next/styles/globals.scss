@@ -2,12 +2,7 @@
 @import './variables.module.scss';
 
 html, body {
-  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
-    // body {
-    //   background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
-    // }
+    background: #000 url('/img/bg.jpeg');
     color: white;
     letter-spacing: 0.08em;
     text-transform: lowercase;

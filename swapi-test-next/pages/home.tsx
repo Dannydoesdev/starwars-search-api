@@ -1,9 +1,7 @@
-import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import { Key, useEffect, useState } from 'react'
 import Film from '../components/HomePage/Film'
 import { IndividualFilm } from '../interfaces'
-import { useApiSearch } from '../hooks/useApiSearch'
 
 type FilmListProps = {
   films: IndividualFilm[]
@@ -51,9 +49,6 @@ export function Home({ films }: FilmListProps) {
     console.log(selectedFavouriteId)
     if (selectedFavouriteUrl == '') return
 
-    // setCurrentFavourites(
-    //   currentFavourites.filter((favourite: any) => favourite !== '')
-    // )
     if (currentFavourites.includes(selectedFavouriteUrl)) {
       console.log('Item already stored... removing')
       console.log(selectedFavouriteId)
@@ -78,7 +73,6 @@ export function Home({ films }: FilmListProps) {
   return (
     <div className={styles.div}>
     
-      {/* <NavBar /> */}
       <h1>Welcome to the Star Wars search engine</h1>
       <div className={styles.movieGrid}>
       {currentFavourites.length >= 1 && <h2 className={styles.heading}>Favourites</h2>}
@@ -86,7 +80,6 @@ export function Home({ films }: FilmListProps) {
         return (
           currentFavourites.includes(film.properties.url) &&
           <div key={index}>
-            {/* {currentFavourites.includes(film.properties.url) && */}
               <Film
                 title={film.properties.title}
                 releaseYear={film.properties.release_date}

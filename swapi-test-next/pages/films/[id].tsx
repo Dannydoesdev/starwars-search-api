@@ -1,11 +1,7 @@
-import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-import { IndividualFilm, FilmResult } from '../../interfaces';
+import { FilmResult } from '../../interfaces';
 import Link from 'next/link';
-import { Key, useEffect, useState } from 'react'
 import useArraySearch from '../../hooks/useApiSearch';
-import Character from '../../components/MoviePage/Character';
-import Planet from '../../components/MoviePage/Planet';
 import MoviePageMain from '../../components/MoviePage/MoviePageMain';
 
 export const getStaticPaths: GetStaticPaths = async () => {
