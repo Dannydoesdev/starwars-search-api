@@ -14,8 +14,12 @@ const fetcher = (url: URL) => fetch(url).then(res => res.json())
 export function useApiSearch(endpoint: string, param: string, term: string) {
 
   const returnArr: any = [];
-  const { data, error } = useSWRImmutable(`https://www.swapi.tech/api/${endpoint}/?${param}=${term}`, fetcher)
+  const { data, error, isLoading } = useSWR(`https://www.swapi.tech/api/${endpoint}/?${param}=${term}`, fetcher, 
+  { dedupingInterval: 1000 })
 
+ 
+  console.log(data)
+  if(!isLoading){
   if (data && data.result) {
     data.result.map((singleResult: any) => {
       let resultObj = {
@@ -40,6 +44,7 @@ export function useApiSearch(endpoint: string, param: string, term: string) {
     return returnArr;
   }
 }
+}
 
 
 function useApiArray(endpointArray: string[]) {
@@ -51,7 +56,7 @@ function useApiArray(endpointArray: string[]) {
   const returnArr: any = [];
 
   endpointArray.map((endpoint) => {
-    const { data } = useSWRImmutable(`${endpoint}`, fetcher, { dedupingInterval: 2000 })
+    const { data, error } = useSWRImmutable(`${endpoint}`, fetcher, { dedupingInterval: 2000 })
     if (data) {
       let resultObj = {
         name: data.result.properties.name,

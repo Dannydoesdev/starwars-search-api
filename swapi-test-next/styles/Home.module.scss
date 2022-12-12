@@ -43,6 +43,14 @@
   }
 }
 
+@include mobile {
+  .div {
+    text-align: center;
+  
+
+  }
+}
+
 @media (prefers-color-scheme: light) {
   // .div {
   //   h1 {

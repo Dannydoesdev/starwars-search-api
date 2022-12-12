@@ -1,3 +1,5 @@
+@import "mixins";
+@import './variables.module.scss';
 
 .header {
   position: absolute;
@@ -53,7 +55,7 @@
       position: relative;
       transition: all 0.2s;
     }
-    
+
     .navItem:hover {
       font-weight: bold;
     }
@@ -62,10 +64,7 @@
 
 }
 
-
-
-
-@media screen and (min-width: 768px) {
+@include desktop {
   .navMenuBar {
     display: none;
   }
@@ -77,6 +76,7 @@
     width: fit-content;
     column-gap: 24px;
     align-items: center;
+
   }
 
   .nav__link::before {
@@ -93,4 +93,60 @@
   .nav__link:hover:before {
     width: 100%;
   }
+}
+
+// @media screen and (min-width: 768px) {
+//   .navMenuBar {
+//     display: none;
+//   }
+
+//   .navMenuList {
+//     position: unset;
+//     flex-direction: row;
+//     min-height: fit-content;
+//     width: fit-content;
+//     column-gap: 24px;
+//     align-items: center;
+
+//   }
+
+//   .nav__link::before {
+//     content: '';
+//     position: absolute;
+//     width: 0%;
+//     height: 6px;
+//     bottom: -16px;
+//     left: 0;
+//     background-color: black;
+//     transition: all 0.2s;
+//   }
+
+//   .nav__link:hover:before {
+//     width: 100%;
+//   }
+// }
+
+@include mobile {
+
+  .header {
+
+    nav {
+
+      h1 {
+        font-size: 18px;
+      }
+
+      .searchBox {
+        font-size: 10px;
+      }
+
+      .navMenuList{
+        gap: 10px;
+      }
+      .navItem {
+        font-size: 12px;
+      }
+    }
+  }
+
 }

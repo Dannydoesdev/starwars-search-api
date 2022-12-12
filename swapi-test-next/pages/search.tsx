@@ -44,17 +44,18 @@ function Search() {
       />
       <br />
       <br />
+
       <label htmlFor="type"> Search from:  </label>
-
-      <select onChange={handleSelectChange} name="type" id="type">
-        <option value="films">Films</option>
-        <option value="people">Characters</option>
-        <option value="starships">Starships</option>
-        <option value="vehicles">Vehicles</option>
-        <option value="planets">Planets</option>
-        <option value="species">Species</option>
-      </select>
-
+      {/* <div className='selectDropDown'> */}
+        <select className='typeSelect' onChange={handleSelectChange} name="type" id="type">
+          <option value="films">Films</option>
+          <option value="people">Characters</option>
+          <option value="starships">Starships</option>
+          <option value="vehicles">Vehicles</option>
+          <option value="planets">Planets</option>
+          <option value="species">Species</option>
+        </select>
+      {/* </div> */}
       {searchResultInput ?
         searchResultInput.map((result: any, index: Key | null | undefined) => {
           return (

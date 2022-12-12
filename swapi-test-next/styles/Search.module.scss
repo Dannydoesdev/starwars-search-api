@@ -8,6 +8,11 @@
   // margin: auto;
   text-align: center;
 
+  select {
+    font: inherit;
+    text-align: center;
+  }
+
   p {
     font-size: 18px;
     color: $primary-color;
@@ -20,4 +25,32 @@
   font: inherit;
   font-size: 14px;
   text-align: center;
+}
+
+
+@include mobile {
+
+  .body {
+    select * {
+      font-size: 12px;
+      background-color: white;
+      color: $primary-color;
+    }
+
+    select::after {
+      position: absolute;
+      font-size: 12px;
+      background-color: white;
+      color: $primary-color;
+    }
+  }
+
+  .searchBox {
+    width: 70vw;
+    height: 5vh;
+    font: inherit;
+    font-size: 12px;
+    text-align: center;
+  }
+
 }

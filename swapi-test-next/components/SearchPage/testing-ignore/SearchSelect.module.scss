@@ -1,0 +1,119 @@
+@import "mixins";
+@import './variables.module.scss';
+
+.body {
+  margin-top: 150px;
+  height: calc(100vh - 200px);
+  width: 100%;
+  // margin: auto;
+  text-align: center;
+
+  select {
+    font: inherit;
+    text-align: center;
+  }
+
+  p {
+    font-size: 18px;
+    color: $primary-color;
+  }
+}
+
+.searchBox {
+  width: 50vw;
+  height: 5vh;
+  font: inherit;
+  font-size: 14px;
+  text-align: center;
+}
+
+// .customSelect {
+//   background-color: red;
+// }
+
+// .typeSelectMain {
+//   color: black;
+//   width: 10vw;
+//   display: flex;
+// }
+
+@include mobile {
+
+  .body {
+    select * {
+      font-size: 12px;
+      background-color: white;
+      color: $primary-color;
+    }
+
+
+
+
+    // .typeSelect {
+    //   position: relative;
+    //   font: inherit;
+    //   font-size: 11px;
+    //   letter-spacing: 0.1em;
+    //   text-align: center;
+    //   background-color: white;
+    //   color: black;
+    //   margin-bottom: 20px;
+
+    //   // option {
+
+    //   //   font: inherit;
+    //   //   background-color: white;
+    //   //   color: $primary-color;
+    //   // }
+    // }
+      // .typeSelect::before {
+      //   // Create the overlay using the ::before pseudo-element
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   color: black;
+      //   background-color: #fff !important;
+      //   // background-color: rgba(0,0,0,0.5) !important;
+      //   z-index: 1 !important;
+      // }
+      
+      // .typeSelect::after {
+      //   // Create the content for the overlay using the ::after pseudo-element
+      //   content: "";
+      //   color: black;
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-50%, -50%);
+      //   width: 80%;
+      //   max-width: 400px;
+      //   padding: 20px !important;
+      //   background-color: #fff !important;
+      //   z-index: 2 !important;
+      // }
+    
+
+  //   select:after * {
+  //     position: relative;
+  //     font: inherit;
+  //     font-size: 12px;
+  //     letter-spacing: 0.1em;
+  //     text-align: center;
+  //     background-color: white;
+  //     color: $primary-color;
+  // }
+}
+
+  .searchBox {
+    width: 70vw;
+    height: 5vh;
+    font: inherit;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+
+}
