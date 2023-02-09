@@ -1,8 +1,15 @@
-# The Star Wars Search engine - Wooly Mammoth
+# The Star Wars Search engine
 
 ## SWAPI, React and NextJS
 
-#### © Daniel Mcgee 2022
+
+---
+
+### Quick background
+
+- This started as a take home coding test brief, to build a SWAPI search from scratch - the features and stack are drawn from that brief
+- But, as is not something I would usually build, I had a lot of fun optimising it & jazzing it up to be extra 'Star Wars-y'
+
 ---
 
 ## Live site
@@ -13,29 +20,6 @@
 ## Contact
 
 ### You can find me at [Linkedin](https://www.linkedin.com/in/danieltmcgee/)
-
----
-
-## Architecure
-
-- To give it the most 'Star Warsy' feel I have made the index page a (skippable) intro sequence
-- NextJS 13 is used as the framework and SWR 2.0 used for client API calls
-- Components that are exported to pages are in the components/ folder
-- Hooks for API Search (search page) and API ArraySearch (for individual film pages) are in the hooks folder
-- When a film page is clicked from the 'home' page, the arrays returned from SWAPI for each resource are sent to the useApiSeach hook and displayed when returned
-- SCSS styles are in the styles folder
-- Local storage for favourites is managed on the home.tsx page currently, getting localstorage on load & updating on click
-
-
----
-
-## Known issues/improvements planned
-
-- Individual film information for the film pages (/films/1 etc) is static but is loaded on the client side via SWR, this would be more efficient as a server side call
-- The search page could use the named resource Components (components/Character.tsx etc) to return a more dynamic set of information
-- The search page could allow the user to search 'all' endpoints and surface results as suggestions when results are empty
-- I would like to let the user click a search result and load a page with detailed information on that result in a dedicated page (currently opens the JSON blob on SWAPI)
-- Due to time constraints, testing and accessibility has not yet been implemented in a significant way
 
 ---
 
@@ -65,9 +49,35 @@ Consume the Star Wars API (SWAPI) using React, NextJS and other JS technologies 
 - https://www.swapi.tech/
 - https://nextjs.org/
 
+---
+
+## Architecure
+
+- To give it the most 'Star Warsy' feel I have made the index page a (skippable) intro sequence
+- NextJS 13 is used as the framework and SWR 2.0 used for client API calls
+- Components that are exported to pages are in the components/ folder
+- Hooks for API Search (search page) and API ArraySearch (for individual film pages) are in the hooks folder
+- When a film page is clicked from the 'home' page, the arrays returned from SWAPI for each resource are sent to the useApiSeach hook and displayed when returned
+- SCSS styles are in the styles folder
+- Local storage for favourites is managed on the home.tsx page currently, getting localstorage on load & updating on click
+
 
 ---
+
+## Known issues/improvements planned
+
+- Individual film information for the film pages (/films/1 etc) is static but is loaded on the client side via SWR, this would be more efficient as a server side call
+- The search page could use the named resource Components (components/Character.tsx etc) to return a more dynamic set of information
+- The search page could allow the user to search 'all' endpoints and surface results as suggestions when results are empty
+- I would like to let the user click a search result and load a page with detailed information on that result in a dedicated page (currently opens the JSON blob on SWAPI)
+- Due to time constraints, testing and accessibility has not yet been implemented in a significant way
+
+
+
+---
+
 ## Installing and running the application locally:
+
 - Clone or Download a zip of the repo
 - CD into swapi-test-next
 - Install all necessary dependencies: ```npm install ```
